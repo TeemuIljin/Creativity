@@ -1,3 +1,5 @@
+package fxpeli;
+
 public class Create {
 
     static int health = 100;
@@ -55,4 +57,5 @@ public class Create {
             scatteredweapons -= 1;
         }
     }
+
 }
