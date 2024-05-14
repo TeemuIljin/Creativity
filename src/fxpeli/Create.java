@@ -11,6 +11,12 @@ public class Create {
 
     static boolean foundweapon = false;
 
+    static boolean dead = false;
+
+    static int lives = 3;
+
+    static int enemies = 10;
+
     static boolean attack = false;
 
     public static void main(String[] args) {
@@ -35,6 +41,11 @@ public class Create {
         System.out.println("Updated Stamina: " + stamina);
         System.out.println("Attack status: " + attack);
         System.out.println("Attack value " + attackvalue);
+
+        //nollaa tiedot
+        dead = true;
+        death();
+        System.out.println("Updated lives: " + lives);
     }
 
     public static void start(int starthealth, int startstamina, boolean startattack) {
@@ -48,6 +59,8 @@ public class Create {
             health -= 10;
             stamina -= 5;
             attack = false;
+            enemies -= 1;
+
         }
     }
     public static void foundweapon() {
@@ -57,5 +70,15 @@ public class Create {
             scatteredweapons -= 1;
         }
     }
+    public static void death() {
+        if (dead) {
+            attackvalue = 10;
+            foundweapon = false;
+            scatteredweapons = 8;
+            lives -= 1;
+            enemies = 10;
+        }
+    }
+
 
 }
