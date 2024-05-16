@@ -68,6 +68,7 @@ public class Create {
             attackvalue += 50;
             foundweapon = false;
             scatteredweapons -= 1;
+            foundweapon = false;
         }
     }
     public static void death() {
