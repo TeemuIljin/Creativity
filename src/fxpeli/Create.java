@@ -9,9 +9,15 @@ public class Create {
 
     static int attackvalue = 10;
 
+    static int experience = 1;
+
+    static int xpvalue = 100;
+
     static boolean foundweapon = false;
 
     static boolean dead = false;
+
+    static boolean kill = false;
 
     static int lives = 3;
 
@@ -35,6 +41,10 @@ public class Create {
         // löydetty ase
         foundweapon = true;
         foundweapon();
+
+        killed();
+
+        levelup();
 
         // tiedot hyökkäyksen jälkeen
         System.out.println("Updated Health: " + health);
@@ -61,12 +71,12 @@ public class Create {
             attack = false;
             enemies -= 1;
 
+
         }
     }
     public static void foundweapon() {
         if (foundweapon) {
             attackvalue += 50;
-            foundweapon = false;
             scatteredweapons -= 1;
             foundweapon = false;
         }
@@ -78,6 +88,19 @@ public class Create {
             scatteredweapons = 8;
             lives -= 1;
             enemies = 10;
+        }
+    }
+        public static void killed() {
+            if (kill) {
+                attackvalue += 100;
+                xpvalue += 100;
+            }
+    }
+    public static void levelup() {
+        if (xpvalue == 1000) {
+            attackvalue += 100;
+            health += 100;
+
         }
     }
 
