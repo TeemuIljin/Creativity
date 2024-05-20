@@ -2,61 +2,29 @@ package fxpeli;
 
 public class Create {
 
-    static int health = 100;
-    static int stamina = 50;
+    public static int health = 100;
+    public static int stamina = 50;
 
-    static int scatteredweapons = 8;
+    public static int scatteredweapons = 8;
 
-    static int attackvalue = 10;
+    public static int attackvalue = 10;
 
     static int experience = 1;
 
     static int xpvalue = 100;
 
-    static boolean foundweapon = false;
+    public static boolean foundweapon = false;
 
-    static boolean dead = false;
+    public static boolean dead = false;
 
-    static boolean kill = false;
+    public static boolean kill = false;
 
-    static int lives = 3;
+    public static int lives = 3;
 
     static int enemies = 10;
 
-    static boolean attack = false;
+    public static boolean attack = false;
 
-    public static void main(String[] args) {
-        start(health, stamina, attack);
-
-        //alussa
-
-        System.out.println("Initial Health: " + health);
-        System.out.println("Initial Stamina: " + stamina);
-        System.out.println("Initial Attack: " + attack);
-        System.out.println("Attack value " + attackvalue);
-
-        // hyökkäys
-        attack = true;
-        attacked();
-        // löydetty ase
-        foundweapon = true;
-        foundweapon();
-
-        killed();
-
-        levelup();
-
-        // tiedot hyökkäyksen jälkeen
-        System.out.println("Updated Health: " + health);
-        System.out.println("Updated Stamina: " + stamina);
-        System.out.println("Attack status: " + attack);
-        System.out.println("Attack value " + attackvalue);
-
-        //nollaa tiedot
-        dead = true;
-        death();
-        System.out.println("Updated lives: " + lives);
-    }
 
     public static void start(int starthealth, int startstamina, boolean startattack) {
         health = starthealth;
@@ -100,8 +68,17 @@ public class Create {
         if (xpvalue == 1000) {
             attackvalue += 100;
             health += 100;
+            experience += 1;
 
         }
+    }
+
+    public Create(int health, int stamina, int attackvalue, int scatteredweapons, int lives) {
+        Create.health = health;
+        Create.stamina = stamina;
+        Create.attackvalue = attackvalue;
+        Create.scatteredweapons = scatteredweapons;
+        Create.lives = lives;
     }
 
 
