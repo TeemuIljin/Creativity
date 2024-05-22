@@ -11,6 +11,12 @@ public class Create {
 
     static int experience = 1;
 
+    static boolean loadEnemies = false;
+
+    static boolean createNewmap = false;
+
+    static int Maps = 2;
+
     static int xpvalue = 100;
 
     public static boolean foundweapon = false;
