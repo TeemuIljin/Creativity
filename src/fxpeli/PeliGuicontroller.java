@@ -21,11 +21,20 @@ public class PeliGuicontroller {
             Create.foundweapon = true;
             Create.foundweapon();
 
+            //toinen ase
+            Create.foundweapon = true;
+            Create.foundweapon();
+
+
             // tapoin vihollisen
             Create.kill = true;
             Create.killed();
 
             // noustaan tasoa
+            Create.levelup();
+
+
+            //uusi levelup
             Create.levelup();
 
             // näiden jälkeen
